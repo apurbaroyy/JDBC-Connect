@@ -1,0 +1,24 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import com.mysql.cj.jdbc.Driver;
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        String url = "jdbc:mysql://localhost:3306/quiz_db"
+                + "?useSSL=false"
+                + "&serverTimezone=UTC"
+                + "&allowPublicKeyRetrieval=true";
+
+        String user = "root";
+        String password = "apurbaict";
+
+        try (Connection con = DriverManager.getConnection(url, user, password)) {
+            System.out.println("JDBC Connected Successfully!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}     ami databases input dite chai emon akta code den
